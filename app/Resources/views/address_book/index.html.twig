@@ -1,0 +1,23 @@
+{% extends 'layouts/base.html.twig' %}
+{% block page_title %}
+    Address Book
+{% endblock %}
+{% block body %}
+    <a href="{{ url("add_new_address") }}" class="float deep-orange">
+        <i class="fas fa-plus my-float"></i></a>
+    </a>
+
+    <div class="row mb-4">
+        <div class="card col-sm-12 btn-outline-deep-orange">
+            <div class="card-body">
+                All Addresses
+            </div>
+        </div>
+    </div>
+
+    <div class="row mb-4">
+        {% for item in address_items %}
+            {% include 'address_book/components/address_card.html.twig' %}
+        {% endfor %}
+    </div>
+{% endblock %}

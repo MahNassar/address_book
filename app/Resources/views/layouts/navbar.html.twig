@@ -1,0 +1,15 @@
+<nav class="navbar navbar-dark btn-dark justify-content-between">
+    {#<a class="navbar-brand" href="#">Address</a>#}
+    <a class="navbar-brand white-text" href="{{ url("addresses_list") }}">
+        {#<img src="{{ asset('assets/images/logo.png') }}" width="40" height="40" alt="">#}
+        <i class="fa fa-address-book fa-2x" aria-hidden="true"></i>
+    </a>
+
+    <form class="form-inline my-1">
+        <div class="md-form form-sm my-0">
+            <input class="form-control form-control-sm mr-sm-2 mb-0" type="text" placeholder="Search"
+                   aria-label="Search">
+        </div>
+        <button class="btn btn-outline-white btn-sm my-0" type="submit">Search</button>
+    </form>
+</nav>

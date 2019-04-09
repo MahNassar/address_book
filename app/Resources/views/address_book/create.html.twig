@@ -1,0 +1,26 @@
+{% extends 'layouts/base.html.twig' %}
+{% block page_title %}
+    Create Address Book
+{% endblock %}
+
+{% block body %}
+    <div class="row mb-4">
+        <div class="card col-sm-12 btn-outline-deep-orange">
+            <div class="card-body">
+                Create New Address
+            </div>
+        </div>
+
+    </div>
+
+
+    <form action="{{ url("save_new_address") }}" method="POST" class="btn-outline-deep-orange"
+          enctype="multipart/form-data">
+        <div class="row man-container">
+            {% include 'address_book/components/form_inputs.html.twig' %}
+            <div class="col-sm-3 float-lg-right">
+                <button type="submit" class="btn btn-primary">Save</button>
+            </div>
+        </div>
+    </form>
+{% endblock %}

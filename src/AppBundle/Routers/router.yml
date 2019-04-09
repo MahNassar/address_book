@@ -1,0 +1,35 @@
+addresses_list:
+    path:     /
+    defaults: { _controller: AppBundle:AddressBook:index }
+
+add_new_address:
+    path:     /address/create
+    defaults: { _controller: AppBundle:AddressBook:create }
+
+save_new_address:
+    path:     /address/store
+    defaults: { _controller: AppBundle:AddressBook:store }
+    methods: [POST]
+
+delete_address:
+     path:   /address/{id}/delete
+     defaults: { _controller: AppBundle:AddressBook:delete }
+     requirements:
+             id: '\d+'
+
+view_address:
+     path:   /address/{id}
+     defaults: { _controller: AppBundle:AddressBook:view }
+     requirements:
+             id: '\d+'
+
+edit_address:
+     path:   /address/{id}/edit
+     defaults: { _controller: AppBundle:AddressBook:update }
+     methods: [POST]
+#     requirements:
+#             id: '\d+'
+
+
+
+

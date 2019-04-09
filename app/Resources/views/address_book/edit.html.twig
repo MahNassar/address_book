@@ -1,0 +1,30 @@
+{% extends 'layouts/base.html.twig' %}
+{% block page_title %}
+    Create Address Book
+{% endblock %}
+
+{% block body %}
+    <div class="row mb-4">
+        <div class="card col-sm-12 btn-outline-deep-orange">
+            <div class="card-body">
+                Edit Address
+                <a class="btn btn-sm btn-primary btn-rounded" style="float:right" onclick="openToEdit()">
+                    <i class="fa fa-edit fa-1x">
+                    </i>
+                </a>
+
+            </div>
+        </div>
+
+    </div>
+    <form action="{{ url("edit_address", {id: address_item.id}) }}" method="POST"
+          class="btn-outline-deep-orange" id="edit_form"
+          enctype="multipart/form-data">
+        <div class="row man-container">
+            {% include 'address_book/components/form_inputs.html.twig' %}
+            <div class="col-sm-3 float-lg-right">
+                <button type="submit" class="btn btn-primary">Edit</button>
+            </div>
+        </div>
+    </form>
+{% endblock %}

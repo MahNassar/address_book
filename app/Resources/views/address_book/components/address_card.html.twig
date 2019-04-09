@@ -1,0 +1,26 @@
+<div class="col-sm-4 mb-4">
+    <div class="card btn-outline-deep-orange">
+        <img class="card-img-top img-thumbnail rounded mx-auto d-block"
+             src="{{ item.image !="" ? asset('uploads/'~ item.image) :asset("assets/images/user-default.jpg") }}"
+             alt="Card image cap"
+             style="width: 70% !important; height: 200px !important;"
+        >
+        <div class="card-body">
+            <h5 class="card-title">{{ item.firstName }}  {{ item.lastName }}</h5>
+            <p class="card-text">{{ item.streetNumber }}</p>
+            <a type="button" href="{{ url('view_address', {id: item.id}) }}" class="btn btn-dark">Edit</a>
+            <a href="{{ url('delete_address', {id: item.id}) }}" type="button" class="btn btn-dark">Delete</a>
+        </div>
+        <div class="rounded-bottom mdb-color btn-dark text-center pt-3">
+            <ul class="list-unstyled list-inline font-small">
+
+                <li class="list-inline-item pr-2 white-text"><i
+                            class="far fa-calendar pr-1"></i>{{ item.birthday }}
+                </li>
+                <li class="list-inline-item pr-2"><a href="#" class="white-text"><i
+                                class="fa fa-phone pr-1"></i>{{ item.phoneNumber }}</a></li>
+
+            </ul>
+        </div>
+    </div>
+</div>

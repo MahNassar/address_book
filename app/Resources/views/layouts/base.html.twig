@@ -1,0 +1,20 @@
+{% include 'layouts/header.html.twig' %}
+
+<body>
+
+{% include 'layouts/navbar.html.twig' %}
+
+
+<div class="container man-container">
+    {% for label, messages in app.flashes %}
+        {% for message in messages %}
+            <div class="alert alert-{{ label }}">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endfor %}
+    {% block body %}{% endblock %}
+
+</div>
+
+{% include 'layouts/footer.html.twig' %}
